@@ -1192,8 +1192,9 @@
       </p>
 
       <p>
-          <a class=sector>Rim Worlds</a> sector was designed and submitted
-          by Brian Smaller.
+          <a class=sector>Rim Worlds</a> and
+          <a class=sector>Constance</a>
+          sectors were designed and submitted by Brian Smaller.
       </p>
 
       <p>
@@ -1311,6 +1312,11 @@
           sector was designed by Sean Nelson.
       </p>
 
+      <p>
+        <a class=sector>The Outer Reaches</a>
+        sector was designed by Michael D. Lusby.
+      </p>
+
       <!-- ================================================================================ -->
       <h2>Borders and Routes</h2>
       <!-- ================================================================================ -->
@@ -1382,7 +1388,8 @@
   })(window.location);
 
   $$('a.sector').forEach(anchor => {
-    const name = anchor.innerText || anchor.textContent;
+    const name = (anchor.innerText || anchor.textContent)
+          .replace(/^The /, '');
     anchor.href = `${SERVICE_BASE}/go/${encodeURIComponent(name)}`;
     anchor.target = "_blank";
     anchor.rel = 'noopener';
